@@ -23,15 +23,16 @@ updates:
         applies-to: security-updates
         patterns:
           - "*"
+    ignore:
+      - dependency-name: "setuptools"
+
   - package-ecosystem: "github-actions"
     directories:
-      - ".github/workflows"
+      - "/"
     schedule:
       interval: "weekly"
     cooldown:
       default-days: 5
-      semver-major-days: 30
-      semver-patch-days: 3
     groups:
       minor-patch-updates:
         update-types: ["minor", "patch"]
@@ -48,8 +49,6 @@ updates:
       interval: "weekly"
     cooldown:
       default-days: 5
-      semver-major-days: 30
-      semver-patch-days: 3
     groups:
       minor-patch-updates:
         update-types: ["minor", "patch"]
@@ -59,5 +58,3 @@ updates:
         applies-to: security-updates
         patterns:
           - "*"
-    ignore:
-      - dependency-name: "setuptools"
